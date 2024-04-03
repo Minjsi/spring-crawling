@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: spring-crawling
+
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/example
+#    username: postgres
+#    password: postgres
+#    driver-class-name: org.postgresql.Driver
+#  jpa:
+#    database: postgresql
+#    generate-ddl: false
+#    open-in-view: false
+#    hibernate:
+#      ddl-auto: none     # 항상 조심!!
+#  flyway: # flyway 설정
+#    enabled: true # 1)
+#    baseline-on-migrate: true # 2)
+#    baseline-version: 0 # 3)
+#    url: jdbc:postgresql://localhost:5432/example
+#    user: postgres
+#    password: postgres # 4)
