@@ -2,21 +2,31 @@ spring:
   application:
     name: spring-crawling
 
-#  datasource:
-#    url: jdbc:postgresql://localhost:5432/example
-#    username: postgres
-#    password: postgres
-#    driver-class-name: org.postgresql.Driver
-#  jpa:
-#    database: postgresql
-#    generate-ddl: false
-#    open-in-view: false
-#    hibernate:
-#      ddl-auto: none     # 항상 조심!!
-#  flyway: # flyway 설정
-#    enabled: true # 1)
-#    baseline-on-migrate: true # 2)
-#    baseline-version: 0 # 3)
-#    url: jdbc:postgresql://localhost:5432/example
-#    user: postgres
-#    password: postgres # 4)
+  datasource:
+    url: jdbc:postgresql://localhost:5432/example
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        ddl-auto: update
+        show_sql: true
+        format_sql: true
+
+        #ddl-auto
+        #create 이면 entity file 기반 서버 실행시 무조건 데이터 베이스 초기화 (create-drop : 서버 종료하자마자 drop)
+        #update 이면 entity file 확인 하면서 기존 컬럼과 비교 후 alter
+        #validate 데이터 베이스와 entity file 비교하며 검증만 진행
+        #none 사용 안함
+
+logging:
+  level:
+    root: info
+#    org:
+#      hibernate:
+#        type:
+#          descriptor:
+#            sql: trace  # query의 ?에 어떤 값이 들어가는지 추적할 수 있는 설정입니다. TRACE Log에 값을 보여줍니다.
